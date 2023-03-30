@@ -12,6 +12,7 @@
 
 → 패턴을 전처리하여 배열 nxt[M] (불일치가 발생했을 경우 이동할 다음 위치)을 구해서 잘못된 시작을 최소화 하는 방식으로 동작.  
 
+<img src="https://user-images.githubusercontent.com/33312417/228741520-096b7ac3-fe43-4078-a290-56d78e7c29e8.png" width="200" height="400"/>
 ![image](https://user-images.githubusercontent.com/33312417/228741520-096b7ac3-fe43-4078-a290-56d78e7c29e8.png)
 → O(N + M) (=본문 길이 + 패턴 길이)  
 
