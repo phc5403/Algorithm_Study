@@ -5,4 +5,4 @@ Test_Version
 # 절대 공개 여부 Public 변경 금지 !!
 
 
-## 재귀, 백트래킹, 문자열 알고리즘(KMP, Boyer 등)
+## 재귀, 백트래킹, 문자열 알고리즘(KMP, Boyer 등), 분할과 정복, 각종 Sort 로직,
