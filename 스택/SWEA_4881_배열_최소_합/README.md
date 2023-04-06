@@ -1,5 +1,5 @@
 # 정리
-● Testcase 10개, C/C++ = 1 sec, Java = 2 sec, 256 MB
+● Testcase 10개, C/C++ = 1 sec, Java = 2 sec, 256 MB  
 → SWEA는 항상 문제 메인화면에선 Python의 Time Limit이 명시되지 않아 불편했는데, 잘 찾아보니 "문제 풀기"로 진입시에 따로 명시가 돼있었다.  
 하지만 백준과 다르게 Java와 같은 2 sec라서 TLE가 4번이나 뜨는 불상사가 있었으나, 그냥 PyPy를 선택한 이유로 감수해야 할 것같다.  
 
