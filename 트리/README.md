@@ -17,7 +17,7 @@
   4. Sibling node(형제 노드) : 같은 부모 node의 자식 node들      
   5. Ancestor node(조상 노드) : edge를 따라 root node까지 이르는 경로에 있는 모든 node들   
   6. Descendent node(자손 노드) : Subtree에 있는 하위 level의 node들   
-  7. SubTree(서브 트리) : 부모 node와 연결된 간선을 끊었을 때 생성되는 Tree 
+  7. SubTree(서브 트리) : 부모 node와 연결된 간선을 끊었을 때 생성되는 Tree  
   8. Degree(차수) : 특정 node에 연결된 자식 노드의 수  
   9. Tree의 degree : 일반적으로 Tree에 있는 각 node의 degree 중에서 **가장 큰 값**  
   10. Leaf node(단말or리프 노드) : degree = 0인 node || 자식 node가 없는 node  
@@ -49,7 +49,7 @@
 ● Tree는 비 선형 구조이기 때문에 선형 구조에서와 같이 **선후 연결 관계를 알 수 없음**  
 
 ### 1. Pre-order traversal(전위 순회)
-● Root → Left → Right
+● Root → Left → Right  
 `def preorder_traverse(T)`  
 `    if T:`  
 `        visit(T)  # print(T.item)`  
@@ -57,7 +57,7 @@
 `        preorder_traverse(T.right)`  
 
 ### 2. In-order traversal(중위 순회)
-● Left → Root → Right
+● Left → Root → Right  
 `def inorder_traverse(T)`  
 `    if T:`  
 `        inorder_traverse(T.left)`  
@@ -65,7 +65,7 @@
 `        inorder_traverse(T.right)`  
 
 ### 3. Post-order traversal(후위 순회)
-● Left → Right → Root
+● Left → Right → Root  
 `def postorder_traverse(T)`  
 `    if T:`  
 `        postorder_traverse(T.left)`  
