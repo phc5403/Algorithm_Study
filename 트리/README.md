@@ -78,7 +78,7 @@
 ● `List[N + 1]` index 1 ~ N = node 번호
 ● Level i의 최대 node 수 = 2^i, 전체 node 수 = ∑2^i = 2^(h+1) - 1  
 
-● 성질  
+● 성질 (0 < i)    
   → i번 node의 parent node = node(i // 2)  
   → i번 node의 left child node = node(2 * i)   
   → i번 node의 right child node = node(2 * i + 1)  
