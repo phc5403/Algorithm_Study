@@ -89,10 +89,10 @@
 
 ### Python - Combination
 `import itertools`  
-`조합`  
+`# 조합`  
 `itertools.combinations(반복 가능 객체, r= integer  # r= 생략 불가`  
   
-`중복 조합`  
+`# 중복 조합`  
 `itertools.combinations_with_replacement(반복 가능 객체, r= integer)  # r= 생략 불가`  
 
 
