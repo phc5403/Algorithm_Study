@@ -83,5 +83,8 @@
 ![image](https://user-images.githubusercontent.com/33312417/233563756-99fa9878-a6f5-4b43-afd6-453acabd4d01.png)
 
 
+## 대표적인 Greedy 기반의 알고리즘들
+![image](https://user-images.githubusercontent.com/33312417/233565080-bd462bf5-f985-4bf6-a653-9ba8873d92f7.png)
+
 
 
