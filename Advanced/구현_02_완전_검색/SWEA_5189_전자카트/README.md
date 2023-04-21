@@ -8,9 +8,16 @@ A : 주어진 N에 대해서 **시작과 끝이 1로 동일한** 경로의 Subse
 B : A의 요소를 주어진 배터리 소비량 계산식에 대입한 List[x][y]의 누적합 계산.  
 
 ● 따라서 이러한 구현 계획을 세움  
-    1. 재귀를 이용한 Subset()  # List  
-    2. 1번의 각 return된 subset을 인자로 받는 find_min()으로 배터리 소비량 구하기  
-    3. 구한 소비량 중 최솟값을 출력  
+  1. 재귀를 이용한 Subset()  # List  
+  2. 1번의 각 return된 subset을 인자로 받는 find_min()으로 배터리 소비량 구하기  
+  3. 구한 소비량 중 최솟값을 출력  
     
 → 하지만 Subset()을 받은 find_min()에서 계산 편의를 위해 여러 값을 추가 했었는데, List를 조작하면 자꾸 값이 꼬여 헤매게 되었음.  
-→ 과거에 [BOJ] https://www.acmicpc.net/problem/15649  
+
+→ 과거에 [BOJ] https://www.acmicpc.net/problem/15649 을 풀면서도 경험했던 것인데 List를 Function 내부에서 조작하다보면 특히 **재귀**에서 원하는 대로 안 될 떄가 많았다.  
+정확한 원인과 파훼법을 몰라 결국은 List의 직접적인 조작없이 다르게 풀긴 했다.  
+
+→ 위 사항은 Python에서 mutable, immutable에 관련된 항목인것 같다.  
+즉, List는 mutable한 속성을 가지는데, 이 때문에 내가 원하는 대로 List 조작이 안됐던걸로 알고있고, 후에 이것에 대한 내용을 더 찾아봐야겠다.    
+
+
