@@ -18,9 +18,9 @@
   → Run(런) = 3장의 카드가 연속적인 번호를 갖는 경우   
   → Triplete(트리플릿) = 3장의 카드가 동일한 번호를 갖는 경우  
   → Baby-Gin = 6장의 카드가 Run 과 Triplete으로만 구성된 경우  
-  EX) 667767: 2 Triplete = Baby-Gin(666, 777)    
-  EX) 054060: 1 Run, 1 Triplete = Baby-Gin(456, 000)  
-  EX) 101123: 1 Triplete(111), 남은 023은 Run이 아님!, 1 Run(123)이어도 남은 011이 Triplete이 아님!    
+  `667767 → 2 Triplete = Baby-Gin(666, 777)`      
+  `054060 → 1 Run, 1 Triplete = Baby-Gin(456, 000)`    
+  `101123 → 1 Triplete(111), 남은 023은 Run이 아님!, 1 Run(123)이어도 남은 011이 Triplete이 아님!`      
 
 ## ▶ 조합적 문제
 ● 많은 문제들이 **Permutation(순열), Combination(조합), Subset(부분 집합)** 등과 같은 Combinatorial Problems(조합적 문제들)과 관련 있음  
