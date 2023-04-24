@@ -4,7 +4,8 @@ def bs_repetition(lst, key):  # key에 해당하는 Index를 반환
     end = len(lst) - 1
 
     while start <= end:
-        mid = start + (end - start) // 2
+        # mid = start + (end - start) // 2
+        mid = (start + end) // 2
 
         # Success
         if key == lst[mid]:
@@ -43,7 +44,7 @@ def bs_recursion(lst, low, high, key):  # key에 해당하는 Index를 반환
 # main #
 arr = [3, 2, 1, 6, 9, 4, 8, 7, 5]
 arr.sort()  # First of all, sorting is required.
-find_num = 5
+find_num = 3
 
 print(f'Before = {arr}')
 print(f'Repetition = arr[{bs_repetition(arr, find_num)}] ')
