@@ -117,8 +117,64 @@
 └→ 08:15 ~
 
 
+## ▶ Binary Search(이진 검색)
+● 순차검색보다 효율적  
+
+● 자료의 가운데에 있는 항목의 key 값과 비교하여 다음 검색의 위치를 결정하고 검색을 계속 진행하는 방법  
+  → 목적 key를 찾을 때 까지 이진 검색을 순환적으로 반복 수행해 검색 범위를 반으로 줄여가면서 보다 빠르게 검색 수행.  
+  → **선행 조건: 자료 정렬 상태 필요**  
   
+● 검색 과정  
+1. 자료의 중앙에 있는 원소를 선택(기준)  
+2. 중앙 원소의 값과 찾고자 하는 목표 값을 비교  
+3. 목표 값과 중앙 원소 값의 관계  
+  → IF 목표 값 < 중앙 원소 값: 자료의 왼쪽 절반에 대해서 새로 검색 수행  
+  → ELSE: 자료의 오른쪽 절반에 대해서 새로 검색 수행  
 
+4. 찾고자 하는 값이 나올때 까지 위 과정 반복  
 
+● 특징 ★★  
+→ 자료의 삽입 & 삭제 발생 시 List의 상태를 **항상 정렬 상태로 유지**하는 **추가 작업 필요**  
+
+### 1. 반복을 통한 구현
+`# lst= 검색할 List, key= 검색하고자 하는 값`    
+`def binarySearch(lst, key):`  
+`    start = 0`  
+`    end = len(lst) - 1`  
+  
+`    while start <= end:`  
+`        mid = start + (end - start) // 2`  
+
+`        # 검색 성공`  
+`        if key == lst[mid]:`  
+`            return mid`  
+  
+`        elif key < lst[mid]:`  
+`            end = mid - 1`  
+  
+`        else:  # key > lst[mid]`  
+`            start = mid + 1`  
+  
+`    # 검색 실패`  
+`    return -1`    
+
+### 2. 재귀를 통한 구현
+`# lst= 검색할 List, key= 검색하고자 하는 값`    
+`def binarySearch(lst, low, high, key):`  
+`    # 검색 실패`  
+`    if low > high:`  
+`        return -1`  
+  
+`    else:`  
+`        mid = (low + high) // 2`  
+  
+`        # 검색 성공`  
+`        if key == lst[mid]:`  
+`            return mid`  
+  
+`        elif key < lst[mid]:`  
+`            return binarySearch(lst, low, mid - 1, key)`  
+`        else:  # key > lst[mid]`  
+`            return binarySearch(lst, mid + 1, high, key)`    
 
 
