@@ -30,10 +30,10 @@
   
 `    # 양쪽 List에 원소가 남아있는 경우`  
 `    while len(left) > 0 and len(right) > 0`  
-`    if left[0] <= right[0]:`  
-`        result.append(left.pop(0))`  
-`    else:`  
-`        result.append(right.pop(0))`  
+`        if left[0] <= right[0]:`  
+`            result.append(left.pop(0))`  
+`        else:`  
+`            result.append(right.pop(0))`  
   
 `    if len(left) > 0:  # left가 남아있는 경우`  
 `        result.extend(left)`  
