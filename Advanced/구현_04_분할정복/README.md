@@ -84,7 +84,8 @@
 `        while(left <= right and lst[left] <= pivot): left += 1`  
 `        while(left <= right and lst[right] >= pivot): right -= 1`  
   
-`        # ???? 현시점에서 right는 pivot보다 작은 값을 가리키는 상태`  
+`        # 현 시점: left= pivot보다 큰 값, right= pivot보다 작은 값을 가리킴`  
+`        # Pivot값은 left ~ right 사이에 해당해야 하므로 left ↔ right Swap이 일어남`  
 `        if left <= right:  # 위치 = right - pivot - left 상태이니, 혹시 두 값이 크기가 반대면 교환`  
 `            lst[left], lst[right] = lst[right], lst[left]`  
   
@@ -96,12 +97,14 @@
 
 └→ 03:42 ~  
 
-#### 로무토 파티션의 아이디어
-● 로무토 파티션 동작 과정 ★
+#### Lomuto-Partition(로무토-파티션 알고리즘)의 아이디어
+● 로무토 파티션 동작 과정 ★  
 `def partition(lst, L, R):`  
 `    pivot = lst[R]`  
 `    left = L - 1`  
-  
+
+`    # left= Pivot보다 작은 마지막 값`  
+`    # right= Pivot보다 큰 마지막 값`  
 `    for right in range(L, R):`  
 `        if lst[right] <= pivot:`  
 `            left += 1`  
@@ -113,8 +116,6 @@
 
 └→ 08:15 ~
 
-left = 피봇 보다 작은 마지막 값
-right = 피봇 보다 큰 마지막 값
 
   
 
