@@ -142,7 +142,7 @@
 `        visited[minIndex] = True  # 최소 가중치 정점 방문`  
 
 `        # 선택 정점에 인접한 정점에 대해 반복`  
-`        for v, val in Graph`
+`        for v, val in Graph`  
 `            # 방문 안한 정점 조사`  
 `            if not visited[v] and D[minIndex] + val < D[v]:`  
 `                D[v] = D[minIndex] + val  # 가중치 갱신`  
