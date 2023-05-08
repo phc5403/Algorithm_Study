@@ -130,9 +130,83 @@
 2. 계산하는 항의 총 개수: **T(n) = n + 1**  
   → f[0] ~ f[n]까지 단 한 번씩만 계산  
 
+## ▶ 동전 거스름돈 문제와 이항 계수 문제
+### 동전 거스름돈 문제
+● 1. 중복을 피하기 위해 재귀 알고리즘에 메모이제이션 적용  
+`# change: 거스름돈 금액, coin = [6, 4, 1]: 동전 종류`  
+`# memo[]: 이미 구한 부분 문제의 해를 저장, -1로 초기화`  
+  
+`def CoinChange(change):`  
+`    if memo[change] != -1:`  
+`        return memo[change]`  
+  
+`    else:`  
+`        min = float('inf')`  
+`        for k in range(len(coin)):`  
+`            if change - coin[k] >= 0:`  
+`                res = CoinChange(change - coin[k])`  
+`                if min > res: min = res`  
+  
+`        memo[change] = min + 1`  
+`        return memo[change]`  
+
+● 2. DP 접근: 상향식  
+`# change: 거스름돈 금액, coin = [6, 4, 1]: 동전 종류`  
+`# memo: 이미 구한 부분 문제의 해를 저장`  
+`# 0원에 대한 값은 memo[]에 0으로 사전 초기화`    
+`def CoinChange_DP(change):`  
+`    for N in range(1, change + 1):`  
+`        min = float('inf')`  
+`        for k in range(len(coin)):`  
+`            if N >= coin[k]:`  
+`                res = memo[N - coin[k]]`  
+`                if min > res: min = res`  
+  
+`        memo[N] = min + 1`  
+`    return memo[change]`  
+
+### 이항 정리
+![image](https://user-images.githubusercontent.com/33312417/236774306-6467201d-b7ba-4af4-b3b9-d1fddbc90126.png)
 
 
+![image](https://user-images.githubusercontent.com/33312417/236774542-c3a4d823-a0f4-4d5f-b6bb-9c4899360d6b.png)
 
+● 파스칼의 삼각형 - 이항 계수를 삼각형 모양의 기하학적 형태로 배열  
+
+![image](https://user-images.githubusercontent.com/33312417/236775052-ae380846-5f30-4365-ba48-72a7de27b7f9.png)
+
+#### 1. 이항 계수를 구하는 알고리즘: 재귀 호출  
+● 입력: 음수가 아닌 정수 n, k (n >= k)  
+● 출력: 이항 계수 결과 값  
+
+`def bino(n, k):`  
+`    if k == 0 or k == n: return 1`  
+`    else:`  
+`        return bino(n - 1, k - 1) + bino(n - 1, k)`  
+→ 다수의 중복 호출 존재  
+
+#### 2. 이항 계수를 구하는 알고리즘: 메모이제이션
+`# B: 이미 구한 부분 문제의 해를 저장, -1로 초기화`  
+`def bino(n, k):`  
+`    if k == 0 or k == n: return 1`  
+  
+`    if B[n][k] != -1: return B[n][k]`  
+`    else:  # 아직 구하지 않은 값이면`  
+`        B[n][k] = bino(n - 1, k - 1) + bino(n - 1, k)`  
+`        return B[n][k]`  
+→ B[r][c] = B[r - 1][c - 1] + B[r - 1][c]  
+→ **행 우선** 탐색하는것과 같은 **순서로 계산하면** 의존성에 위배되지 않음  
+
+#### 3. 이항 계수를 구하는 알고리즘: DP, O(N * K)
+`# B: 이미 구한 부분 문제의 해를 저장`  
+`def bino(n, k):`  
+`    for r in range(n + 1):`  
+`        for c in range(min(r, k) + 1):`  
+`            if c == 0 or c == r: B[r][c] = 1`  
+`            else:`  
+`                B[r][c] = B[r - 1][c - 1] + B[r - 1][c]`  
+  
+`    return B[n][k]`    
 
 
 
