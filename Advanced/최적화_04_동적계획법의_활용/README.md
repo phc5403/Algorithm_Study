@@ -46,9 +46,9 @@ lst = [A1, A2, A3, ... ,An]
 ``` python
 # LIS[x]: arr[x]로 끝나는 최장 증가 수열의 길이를 저장
 def LIS_DP():
-    for a in range(1, len(arr)):
+    for a in range(1, len(arr)):  # 1. 예시는 Index = 1부터 시작임 
         LIS[a] = 1
-        for b in range(1, a):
+        for b in range(1, a):  # 2. for문들의 범위는 실제로 { range(N), range(a + 1) }
             if arr[b] < arr[a] and (1 + LIS[b]) > LIS[a]:
                 LIS[a] = LIS[b] + 1
                 
